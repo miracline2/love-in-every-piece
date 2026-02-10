@@ -14,7 +14,7 @@ const App = () => {
   const [showTryAgain, setShowTryAgain] = useState(false)
   const [checkTimeout, setCheckTimeout] = useState(null)
 
-  
+  ''
   useEffect(() => {
 
     if (checkTimeout) {
