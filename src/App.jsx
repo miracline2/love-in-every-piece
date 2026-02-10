@@ -52,7 +52,7 @@ const App = () => {
       const newBoardState = [...boardState]
       const targetPiece = newBoardState[tileIndex]
       
-      // Swap pieces
+      // Swap pieces ----
       newBoardState[tileIndex] = {
         ...pieceData,
         isCorrect: pieceData.correctPosition === tileIndex
