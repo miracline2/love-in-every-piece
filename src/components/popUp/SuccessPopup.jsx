@@ -68,7 +68,7 @@ const SuccessPopup = ({ videoSrc, onClose }) => {
                   {/* Mobile - Super Compact Message */}
                   <div className="block lg:hidden">
                     <p className="text-[11px] sm:text-sm text-gray-700 leading-snug mb-1.5 sm:mb-2">
-                 I want to make You feel, the most specil person in the World.
+                 I want to make You feel, the most special person in the World.
                   <br />
                       Because For me You are...!!!
                     </p>
@@ -83,7 +83,7 @@ const SuccessPopup = ({ videoSrc, onClose }) => {
                   {/* Desktop - Full Message */}
                   <div className="hidden lg:block">
                     <p className="text-base text-gray-700 leading-relaxed mb-3">
-                      I want to make You feel, the most specil person in the World 
+                      I want to make You feel, the most special person in the World 
                       <br />
                       Because For me You are...!!!
                     </p>
