@@ -26,11 +26,11 @@ const SuccessPopup = ({ videoSrc, onClose }) => {
             <div className="text-xl sm:text-3xl md:text-5xl mb-0.5 sm:mb-1 font-semibold
                         bg-gradient-to-r from-purple-400 via-pink-500 to-rose-500
                         text-transparent bg-clip-text animate-soft-glow">
-              Dear Shivu
+              Dear Shivani
             </div>
 
             <h2 className="text-base sm:text-xl md:text-3xl font-bold text-purple-800 mb-0.5 sm:mb-1">
-              💕 A love that grew with time 💕
+              💕 I'd choose you in every life time 💕
             </h2>
 
             <p className="text-[10px] sm:text-sm md:text-lg text-purple-600 font-semibold px-2 hidden sm:block">
