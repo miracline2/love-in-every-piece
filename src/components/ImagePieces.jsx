@@ -28,17 +28,17 @@ const ImagePieces = ({ usedPieces }) => {
   }
 
   return (
-    <div className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[900px]
+    <div className="w-full max-w-[350px] sm:max-w-[380px] md:max-w-[600px] lg:max-w-[900px]
                     flex flex-wrap items-center justify-center
                     rounded-2xl shadow-xl bg-white/90 backdrop-blur-sm
-                    border-4 border-pink-200 p-2 gap-0.5">
+                    border-4 border-pink-200 p-1.5 sm:p-2 gap-0.5">
       {pieceImage.map((piece) => {
         const isUsed = usedPieces.has(piece.id)
         
         return (
           <div
             key={piece.id}
-            className={`w-[60px] h-[66px] relative
+            className={`w-[38px] h-[42px] sm:w-[52px] sm:h-[58px] md:w-[60px] md:h-[66px] relative
                        border transition-all duration-300
                        ${isUsed 
                          ? 'border-gray-200 bg-gray-100 opacity-40 cursor-not-allowed scale-95' 
@@ -54,13 +54,13 @@ const ImagePieces = ({ usedPieces }) => {
               className={`w-full h-full object-cover pointer-events-none transition-all duration-300
                          ${isUsed ? 'grayscale blur-[1px]' : ''}`}
             />
-            {/* {isUsed && (
+            {isUsed && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-gray-400 text-xs font-bold bg-white/60 px-2 py-1 rounded">
+                <span className="text-gray-400 text-[8px] sm:text-xs font-bold bg-white/60 px-1 py-0.5 rounded">
                   Used
                 </span>
               </div>
-            )} */}
+            )}
           </div>
         )
       })}

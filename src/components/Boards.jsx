@@ -67,8 +67,8 @@ const Boards = ({ boardState, onDrop, onRemovePiece }) => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-[240px] sm:w-[260px] md:w-[280px] lg:w-[300px] 
-                      h-[360px] sm:h-[390px] md:h-[420px] lg:h-[450px]
+      <div className="w-[180px] sm:w-[200px] md:w-[280px] lg:w-[300px] 
+                      h-[270px] sm:h-[300px] md:h-[420px] lg:h-[450px]
                       flex flex-wrap rounded-2xl shadow-xl bg-white/90 backdrop-blur-sm
                       border-4 border-pink-200 p-1">
         {Array.from({ length: totalTiles }).map((_, index) => {

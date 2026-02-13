@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from "react"
 import Boards from "./components/Boards"
 import ImagePieces from "./components/ImagePieces"
 import Reference from "./components/Reference"
 import SuccessPopup from "./components/popUp/SuccessPopup"
 import TryAgainPopup from "./components/popUp/TryAgainPopup"
-import video from './assets/video/loveStory.mp4'
+import video from './assets/video/loveStory.mov'
 
 const App = () => {
 
@@ -143,16 +144,16 @@ const App = () => {
 
       <div className="relative z-10 flex flex-col h-screen px-3 sm:px-4 md:px-6">
       
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center py-3 text-purple-800 drop-shadow-sm shrink-0">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center py-2 sm:py-3 text-purple-800 drop-shadow-sm shrink-0">
           This Is For Someone Special ♥
         </h2>
 
-        <div className="text-center text-lg sm:text-sm text-pink-400 mb-2 shrink-0">
-          💕 <span className="font-bold text-lg">Solve this For Sweet Surprises  💕  </span> 
+        <div className="text-center text-xs sm:text-sm text-pink-400 mb-1 sm:mb-2 shrink-0">
+          💕 <span className="font-bold text-sm sm:text-lg">Solve this For Sweet Surprises  💕  </span> 
         </div>
 
-        <div className="flex-1 min-h-0 flex flex-col lg:flex-row gap-4 items-center justify-center">
-
+        {/* Desktop Layout */}
+        <div className="hidden md:flex flex-1 min-h-0 flex-row gap-4 items-center justify-center">
           <div className="flex-1 min-h-0 flex items-center justify-center">
             <Boards 
               boardState={boardState}
@@ -161,13 +162,28 @@ const App = () => {
             />
           </div>
 
-            <div className="shrink-0 flex flex-col items-center justify-center gap-2 md:gap-3 pb-3">
+          <div className="shrink-0 flex flex-col items-center justify-center gap-2 md:gap-3 pb-3">
             <Reference />
             <ImagePieces usedPieces={usedPieces} />
           </div>
+        </div>
 
-        
+        {/* Mobile Layout - NO SCROLL */}
+        <div className="flex md:hidden flex-1 min-h-0 flex-col gap-1.5 justify-between pb-2">
+          {/* Board and Reference in Row */}
+          <div className="flex flex-row gap-2 items-start justify-center shrink-0">
+            <Boards 
+              boardState={boardState}
+              onDrop={handleDrop}
+              onRemovePiece={handleRemovePiece}
+            />
+            <Reference />
+          </div>
 
+          {/* Image Pieces Below - Fits without scroll */}
+          <div className="flex items-center justify-center shrink-0">
+            <ImagePieces usedPieces={usedPieces} />
+          </div>
         </div>
       </div>
 
