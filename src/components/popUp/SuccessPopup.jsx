@@ -34,11 +34,11 @@ const SuccessPopup = ({ videoSrc, onClose }) => {
             </h2>
 
             <p className="text-[10px] sm:text-sm md:text-lg text-purple-600 font-semibold px-2 hidden sm:block">
-              9 years of holding hands, growing together, and choosing each other every single day 🤍
+              9 years of holding hands, growing together, and choosing each other every single day ❤️
             </p>
             {/* Shorter version for mobile */}
             <p className="text-[10px] text-purple-600 font-semibold px-2 sm:hidden">
-              9 years together 🤍
+              9 years together ❤️
             </p>
           </div>
 
@@ -68,22 +68,24 @@ const SuccessPopup = ({ videoSrc, onClose }) => {
                   {/* Mobile - Super Compact Message */}
                   <div className="block lg:hidden">
                     <p className="text-[11px] sm:text-sm text-gray-700 leading-snug mb-1.5 sm:mb-2">
-                 Slowly, gently, everything feels complete with you 
+                 I want to make You feel, the most specil person in the World.
+                  <br />
+                      Because For me You are...!!!
                     </p>
                     <p className="text-pink-600 font-bold text-sm sm:text-base mb-1.5 sm:mb-2">
                       I Love You... ♥
                     </p>
                     <div className="text-[10px] sm:text-sm text-purple-600 font-medium">
-                      💖 Forever & Always 💖
+                       Forever & Always 💖
                     </div>
                   </div>
 
                   {/* Desktop - Full Message */}
                   <div className="hidden lg:block">
                     <p className="text-base text-gray-700 leading-relaxed mb-3">
-                      Every piece you placed was filled with love and care. 
+                      I want to make You feel, the most specil person in the World 
                       <br />
-                      Just like this puzzle, you complete my world! 
+                      Because For me You are...!!!
                     </p>
                     <p className="text-pink-600 font-semibold text-lg mb-3">
                       I Love You... ♥

@@ -15,7 +15,7 @@ const App = () => {
   const [showTryAgain, setShowTryAgain] = useState(false)
   const [checkTimeout, setCheckTimeout] = useState(null)
 
-  
+
   useEffect(() => {
 
     if (checkTimeout) {
@@ -25,10 +25,10 @@ const App = () => {
 
 
     const allFilled = boardState.every(tile => tile !== null)
-    
+
     if (allFilled) {
       const allCorrect = boardState.every(tile => tile.isCorrect)
-      
+
       if (allCorrect) {
         setShowSuccess(true)
       } else {
@@ -39,7 +39,7 @@ const App = () => {
       }
     }
 
-   
+
     return () => {
       if (checkTimeout) {
         clearTimeout(checkTimeout)
@@ -47,18 +47,18 @@ const App = () => {
     }
   }, [boardState])
 
-  
+
   const handleDrop = (tileIndex, pieceData, fromBoardIndex = null) => {
     if (fromBoardIndex !== null) {
       const newBoardState = [...boardState]
       const targetPiece = newBoardState[tileIndex]
-      
+
       // Swap pieces ----
       newBoardState[tileIndex] = {
         ...pieceData,
         isCorrect: pieceData.correctPosition === tileIndex
       }
-      
+
       if (targetPiece) {
         newBoardState[fromBoardIndex] = {
           ...targetPiece,
@@ -67,7 +67,7 @@ const App = () => {
       } else {
         newBoardState[fromBoardIndex] = null
       }
-      
+
       setBoardState(newBoardState)
       return
     }
@@ -76,7 +76,7 @@ const App = () => {
       const existingPiece = boardState[tileIndex]
       const newUsedPieces = new Set(usedPieces)
       newUsedPieces.delete(existingPiece.id)
-      newUsedPieces.add(pieceData.id) 
+      newUsedPieces.add(pieceData.id)
       setUsedPieces(newUsedPieces)
     } else {
       setUsedPieces(new Set([...usedPieces, pieceData.id]))
@@ -98,7 +98,7 @@ const App = () => {
   const handleRemovePiece = (tileIndex) => {
     const piece = boardState[tileIndex]
     if (piece) {
-     
+
       const newBoardState = [...boardState]
       newBoardState[tileIndex] = null
       setBoardState(newBoardState)
@@ -123,7 +123,7 @@ const App = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 overflow-hidden">
-      
+
       {/* Floating Hearts */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {[...Array(15)].map((_, i) => (
@@ -143,19 +143,26 @@ const App = () => {
       </div>
 
       <div className="relative z-10 flex flex-col h-screen px-3 sm:px-4 md:px-6">
-      
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center py-2 sm:py-3 text-purple-800 drop-shadow-sm shrink-0">
-          This Is For Someone Special ♥
+
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center py-2 sm:py-3
+              bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500
+              text-transparent bg-clip-text drop-shadow-sm shrink-0">
+          Made with Love, Just for You  
         </h2>
 
-        <div className="text-center text-xs sm:text-sm text-pink-400 mb-1 sm:mb-2 shrink-0">
-          💕 <span className="font-bold text-sm sm:text-lg">Solve this For Sweet Surprises  💕  </span> 
+        <div className="text-center text-xs sm:text-sm mb-1 sm:mb-2 shrink-0">
+          <span className="font-semibold text-sm sm:text-lg
+        bg-gradient-to-r from-pink-400 to-rose-500
+        text-transparent bg-clip-text">
+            Solve the puzzle to unlock sweet surprises 
+          </span> 
         </div>
+
 
         {/* Desktop Layout */}
         <div className="hidden md:flex flex-1 min-h-0 flex-row gap-4 items-center justify-center">
           <div className="flex-1 min-h-0 flex items-center justify-center">
-            <Boards 
+            <Boards
               boardState={boardState}
               onDrop={handleDrop}
               onRemovePiece={handleRemovePiece}
@@ -172,7 +179,7 @@ const App = () => {
         <div className="flex md:hidden flex-1 min-h-0 flex-col gap-1.5 justify-between pb-2">
           {/* Board and Reference in Row */}
           <div className="flex flex-row gap-2 items-start justify-center shrink-0">
-            <Boards 
+            <Boards
               boardState={boardState}
               onDrop={handleDrop}
               onRemovePiece={handleRemovePiece}
@@ -189,7 +196,7 @@ const App = () => {
 
       {showSuccess && (
         <SuccessPopup
-          videoSrc={video} 
+          videoSrc={video}
           onClose={() => setShowSuccess(false)}
         />
       )}
