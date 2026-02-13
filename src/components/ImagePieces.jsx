@@ -31,7 +31,7 @@ const ImagePieces = ({ usedPieces }) => {
     <div className="w-full max-w-[350px] sm:max-w-[380px] md:max-w-[600px] lg:max-w-[900px]
                     flex flex-wrap items-center justify-center
                     rounded-2xl shadow-xl bg-white/90 backdrop-blur-sm
-                    border-4 border-pink-200 p-1.5 sm:p-2 gap-0.5">
+                    border-4 border-pink-200 p-1 sm:p-2 gap-0.5">
       {pieceImage.map((piece) => {
         const isUsed = usedPieces.has(piece.id)
         

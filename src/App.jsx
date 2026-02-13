@@ -144,7 +144,7 @@ const App = () => {
 
       <div className="relative z-10 flex flex-col h-screen px-3 sm:px-4 md:px-6">
 
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center py-2 sm:py-3
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center py-2 sm:py-3 mt-5 md:mt-0
               bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500
               text-transparent bg-clip-text drop-shadow-sm shrink-0">
           Made with Love, Just for You  
@@ -176,9 +176,9 @@ const App = () => {
         </div>
 
         {/* Mobile Layout - NO SCROLL */}
-        <div className="flex md:hidden flex-1 min-h-0 flex-col gap-1.5 justify-between pb-2">
+        <div className="flex md:hidden flex-1 min-h-0 flex-col gap-1.5 justify-between pb-20">
           {/* Board and Reference in Row */}
-          <div className="flex flex-row gap-2 items-start justify-center shrink-0">
+          <div className="flex flex-row gap-2 mt-20 items-start justify-center shrink-0">
             <Boards
               boardState={boardState}
               onDrop={handleDrop}
@@ -188,7 +188,7 @@ const App = () => {
           </div>
 
           {/* Image Pieces Below - Fits without scroll */}
-          <div className="flex items-center justify-center shrink-0">
+          <div className="flex items-center justify-center mb-10 shrink-0">
             <ImagePieces usedPieces={usedPieces} />
           </div>
         </div>
